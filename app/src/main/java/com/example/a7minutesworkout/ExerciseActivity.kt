@@ -11,6 +11,20 @@ class ExerciseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityExerciseBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+
+        setSupportActionBar(binding?.toolbarExercise)
+
+        if (supportActionBar != null) {
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        }
+
+        // adding back button
+        binding?.toolbarExercise?.setNavigationOnClickListener {
+            onBackPressed()
+        }
+
+
+
     }
 
     override fun onDestroy() {
